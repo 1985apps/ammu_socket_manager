@@ -15,7 +15,7 @@ module AmmuSocketManager
 				request = {
 					:env => env,
 					:connection => request_by_connection,
-					:json_data => data
+					:json_data => data['payload']
 				}
 				self.send(@@event_map[data["event"].to_sym], request)
 			end

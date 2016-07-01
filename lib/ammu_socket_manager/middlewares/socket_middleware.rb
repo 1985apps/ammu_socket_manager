@@ -29,7 +29,6 @@ module AmmuSocketManager
 			        
 			      	ws.on :close do |event|
 			      		self.handler.remove_client(env, event.current_target)
-			        	puts "DELETED CLIENT"
 			      	end
 
 		      		ws.rack_response
