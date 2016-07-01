@@ -4,8 +4,7 @@ module AmmuSocketManager
 		class AmmuRequestHandler
 
 			@@event_map = {}
-			attr_accessor :clients
-			
+			attr_accessor :clients			
 
 			def initialize
 				self.clients = []
@@ -17,7 +16,7 @@ module AmmuSocketManager
 					:connection => request_by_connection,
 					:json_data => data['payload']
 				}
-				self.send(@@event_map[data["event"].to_sym], request)
+				self.send(@@event_map[data["event"]], request)
 			end
 
 		end
